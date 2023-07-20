@@ -13,6 +13,9 @@ class Question(models.Model):
         return self.question_text
 
 class Choice(models.Model):
-    # ...
+    question = models.CharField(max_length=200, default="Default Question Text")
+    choice_text = models.CharField(max_length=200, default="Default Choice Text")
+    votes = models.IntegerField(default=0)
+
     def __str__(self):
         return self.choice_text

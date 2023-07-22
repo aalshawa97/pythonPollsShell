@@ -15,10 +15,12 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from polls import views
+from . import views
+from polls import views#, index
+
 #from .models import MyModel
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', views.index, name='index'),
+    path('', views.index, name='index'),  # URL for the 'index' view
 ]
